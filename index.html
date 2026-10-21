@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Calendar Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🌍 World Calendar Explorer</h1>
+        <p>Discover calendar systems around the world</p>
+    </header>
+
+    <main>
+        <section class="today">
+            <h2>Today's Date</h2>
+            <p id="todayDate"></p>
+            <p id="todayDay"></p>
+        </section>
+
+        <section>
+            <h2>Explore Calendars</h2>
+
+            <div class="filters">
+                <input id="search" type="text"
+                    placeholder="Search calendar or region...">
+
+                <select id="typeFilter">
+                    <option value="">All Types</option>
+                    <option value="Civil">Civil</option>
+                    <option value="Regional">Regional</option>
+                    <option value="Religious">Religious</option>
+                    <option value="Traditional">Traditional</option>
+                    <option value="Historical">Historical</option>
+                    <option value="Proposed">Proposed</option>
+                </select>
+            </div>
+
+            <p id="resultCount">Loading...</p>
+            <div id="calendarList" class="calendar-grid"></div>
+        </section>
+    </main>
+
+    <footer>World Calendar Explorer</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

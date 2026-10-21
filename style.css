@@ -1,0 +1,137 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f5fb;
+    color: #222;
+}
+
+header {
+    background: linear-gradient(120deg, #182848, #4b6cb7);
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+header h1 {
+    margin-bottom: 12px;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 16px;
+}
+
+.today {
+    background: white;
+    padding: 22px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.today h2 {
+    margin-bottom: 12px;
+}
+
+#todayDate {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3157a4;
+    margin: 10px;
+}
+
+#todayDay {
+    color: #666;
+}
+
+h2 {
+    margin-bottom: 18px;
+}
+
+.filters {
+    display: flex;
+    gap: 12px;
+    margin: 18px 0;
+}
+
+input, select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    background: white;
+}
+
+input {
+    flex: 1;
+    min-width: 0;
+}
+
+select {
+    max-width: 180px;
+}
+
+#resultCount {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+}
+
+.calendar-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e5e9f2;
+    box-shadow: 0 3px 10px #00000008;
+}
+
+.calendar-card h3 {
+    color: #294d91;
+    margin-bottom: 12px;
+}
+
+.calendar-card p {
+    margin-top: 9px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.tag {
+    display: inline-block;
+    background: #e7edff;
+    color: #294d91;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+footer {
+    text-align: center;
+    padding: 22px;
+    background: #182848;
+    color: white;
+    margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+    .filters {
+        flex-direction: column;
+    }
+
+    select {
+        max-width: 100%;
+    }
+}
