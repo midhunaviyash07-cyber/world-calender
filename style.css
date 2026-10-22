@@ -1,5 +1,5 @@
 
-/* World Calendar - Main Styles */
+/* WORLD CALENDAR EXPLORER */
 
 * {
     margin: 0;
@@ -9,131 +9,181 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    background: #eaf0ff;
     color: #222;
-    min-height: 100vh;
+    line-height: 1.5;
     padding: 20px;
 }
 
-/* Main heading */
+/* Page heading */
+header {
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    padding: 20px;
+}
+
 h1 {
-    text-align: center;
-    color: #243b6b;
-    margin: 20px 0;
     font-size: 32px;
+    color: #203d75;
+    margin-bottom: 8px;
 }
 
-h2, h3 {
-    color: #243b6b;
-    margin-bottom: 15px;
+h2 {
+    color: #24447f;
+    margin: 20px 0 15px;
+    font-size: 27px;
 }
 
-/* Main application container */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+h3 {
+    color: #24447f;
+    margin: 15px 0;
+    font-size: 21px;
 }
 
-/* Navigation and buttons */
-button, .btn {
-    background: #3155a6;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    margin: 5px;
-    border-radius: 7px;
-    cursor: pointer;
-    font-size: 15px;
-}
-
-button:hover, .btn:hover {
-    background: #1d3676;
-}
-
-/* Inputs and dropdowns */
-input, select, textarea {
-    padding: 10px;
-    margin: 8px 4px;
-    border: 1px solid #bbb;
-    border-radius: 6px;
-    font-size: 15px;
-    max-width: 100%;
-}
-
-input:focus, select:focus, textarea:focus {
-    outline: 2px solid #7599ef;
-}
-
-/* Calendar layout */
-.calendar {
+/* Main content */
+main,
+.container,
+.app-container {
     width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-    table-layout: fixed;
-    background: white;
-}
-
-.calendar th {
-    background: #3155a6;
-    color: white;
-    padding: 12px 4px;
-}
-
-.calendar td {
-    border: 1px solid #ddd;
-    height: 75px;
-    padding: 8px;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-}
-
-.calendar td:hover {
-    background: #e6efff;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
 /* Today's date */
-.today {
-    background: #c8f7dc;
-    color: #155b35;
-    font-weight: bold;
-    border: 2px solid #20945a;
+.today,
+#today,
+.today-date {
+    background: #c9f5dd;
+    border: 2px solid #269b62;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
-/* Selected date */
-.selected {
-    background: #ffedb3;
-    font-weight: bold;
-}
-
-/* Calendar controls */
+/* Calendar navigation */
 .calendar-controls {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
+    align-items: center;
+    gap: 12px;
     margin: 15px 0;
 }
 
-/* Event section */
-.event-section {
-    margin-top: 25px;
-    padding: 18px;
-    background: #f3f6ff;
-    border-radius: 10px;
+/* Buttons */
+button {
+    background: #3457a5;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    padding: 12px 20px;
+    margin: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
-.event-section ul {
-    padding-left: 25px;
+button:hover {
+    background: #203d75;
 }
 
-.event-section li {
-    margin: 10px 0;
+/* Calendar weekday and date grid */
+.calendar-grid,
+.weekdays,
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.weekdays > *,
+.calendar-grid > *,
+.calendar-days > * {
+    min-width: 0;
+    text-align: center;
+    padding: 12px 4px;
+    border-radius: 8px;
+}
+
+/* Weekday headings */
+.weekdays > * {
+    background: #e3eaff;
+    color: #203d75;
+    font-weight: bold;
+}
+
+/* Calendar date buttons */
+.calendar-grid button,
+.calendar-days button,
+.calendar-grid .day,
+.calendar-days .day {
+    width: 100%;
+    min-height: 55px;
+    margin: 0;
+    padding: 10px 2px;
+    overflow-wrap: anywhere;
+}
+
+/* Date hover */
+.calendar-grid button:hover,
+.calendar-days button:hover {
+    background: #203d75;
+}
+
+/* Selected date */
+.selected,
+.selected-date {
+    background: #ffedb3 !important;
+    color: #222 !important;
+    border: 2px solid #e6a700;
+}
+
+/* Today's date in calendar */
+.calendar-grid .today,
+.calendar-days .today {
+    background: #c9f5dd;
+    color: #155b35;
+    border: 2px solid #269b62;
+}
+
+/* Calendar system cards */
+.calendar-card,
+.card {
+    background: #f6f8ff;
+    border: 1px solid #dce4f7;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+}
+
+/* Search, selection and input fields */
+input,
+select,
+textarea {
+    max-width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #7898e8;
+}
+
+/* Search box */
+input[type="search"],
+#search {
+    width: 100%;
+    max-width: 450px;
 }
 
 /* Links */
@@ -146,33 +196,56 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Mobile responsive design */
-@media screen and (max-width: 600px) {
+/* Text spacing */
+p {
+    margin: 8px 0;
+}
+
+/* Mobile responsive layout */
+@media (max-width: 600px) {
     body {
         padding: 8px;
     }
 
-    h1 {
-        font-size: 24px;
+    header {
+        padding: 10px;
     }
 
-    .container {
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    main,
+    .container,
+    .app-container {
         padding: 12px;
     }
 
-    .calendar th {
+    .calendar-grid,
+    .weekdays,
+    .calendar-days {
+        gap: 3px;
+    }
+
+    .weekdays > *,
+    .calendar-grid > *,
+    .calendar-days > * {
         padding: 8px 1px;
         font-size: 12px;
     }
 
-    .calendar td {
-        height: 55px;
-        padding: 4px 1px;
-        font-size: 13px;
+    .calendar-grid button,
+    .calendar-days button {
+        min-height: 42px;
+        padding: 5px 1px;
+        font-size: 12px;
     }
 
-    button, .btn {
-        padding: 9px 10px;
-        font-size: 13px;
+    button {
+        padding: 10px 12px;
     }
 }
